@@ -154,7 +154,7 @@ int main() {
 
     // Exibe uma mensagem inicial no display
     ssd1306_fill(&ssd, false);
-    ssd1306_draw_string(&ssd, "Iniciando...", 20, 28);
+    ssd1306_draw_string(&ssd, "Defina o Tempo", 20, 28);
     ssd1306_send_data(&ssd);
     sleep_ms(2000); // Aguarda 2 segundos
 
