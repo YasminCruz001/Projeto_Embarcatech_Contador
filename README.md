@@ -51,3 +51,5 @@ Este projeto implementa um temporizador utilizando o microcontrolador RP2040, co
 6. Aguarde o alarme sonoro ao final do tempo.
 
 ## Vídeo Demonstrativo
+
+[![Vídeo de Demonstração](https://img.shields.io/badge/Assistir-Vídeo-blue)](https://drive.google.com/file/d/1PB-150I-otrDNr-GG6Lq1UbSViYuzDwS/view?usp=sharing)

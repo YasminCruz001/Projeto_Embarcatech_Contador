@@ -85,7 +85,6 @@ bool verificar_botao_b() {
 }
 
 // Função para atualizar o LED RGB conforme o tempo
-// Função para atualizar os LEDs conforme o tempo restante
 void atualizar_led_rgb() {
     gpio_put(LED_GREEN, 0);
     gpio_put(LED_RED, 0);
@@ -95,8 +94,8 @@ void atualizar_led_rgb() {
         // Verde: tempo inicial
         gpio_put(LED_GREEN, 1);
     } else if (tempo_restante > 5) {
-        // Amarelo: apenas o LED amarelo (no Wokwi, um LED separado)
-        gpio_put(LED_YELLOW, 1);  // Alterado para LED_YELLOW
+        // Amarelo: metade do tempo
+        gpio_put(LED_YELLOW, 1);  
     } else {
         // Vermelho: últimos 5 segundos
         gpio_put(LED_RED, 1);
