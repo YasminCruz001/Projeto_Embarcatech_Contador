@@ -7,7 +7,7 @@
 
 // Definição dos pinos dos LEDs RGB
 #define LED_GREEN 11
-#define LED_BLUE 12
+#define LED_YELLOW 12 
 #define LED_RED 13
 
 // Definição dos pinos dos botões e buzzer
@@ -47,9 +47,9 @@ void init_pins() {
     gpio_set_dir(LED_RED, GPIO_OUT);
     gpio_put(LED_RED, false);
 
-    gpio_init(LED_BLUE);
-    gpio_set_dir(LED_BLUE, GPIO_OUT);
-    gpio_put(LED_BLUE, false);
+    gpio_init(LED_YELLOW);  // Alterado para LED_YELLOW
+    gpio_set_dir(LED_YELLOW, GPIO_OUT);
+    gpio_put(LED_YELLOW, false);
 
     gpio_init(LED_GREEN);
     gpio_set_dir(LED_GREEN, GPIO_OUT);
@@ -85,22 +85,21 @@ bool verificar_botao_b() {
 }
 
 // Função para atualizar o LED RGB conforme o tempo
+// Função para atualizar os LEDs conforme o tempo restante
 void atualizar_led_rgb() {
+    gpio_put(LED_GREEN, 0);
+    gpio_put(LED_RED, 0);
+    gpio_put(LED_YELLOW, 0);  // Desliga todos os LEDs antes de definir o estado correto
+
     if (tempo_restante > (tempo_definido * 60 / 2)) {
         // Verde: tempo inicial
         gpio_put(LED_GREEN, 1);
-        gpio_put(LED_RED, 0);
-        gpio_put(LED_BLUE, 0);
     } else if (tempo_restante > 5) {
-        // Amarelo: metade do tempo (verde + vermelho)
-        gpio_put(LED_GREEN, 1);
-        gpio_put(LED_RED, 1);
-        gpio_put(LED_BLUE, 0);
+        // Amarelo: apenas o LED amarelo (no Wokwi, um LED separado)
+        gpio_put(LED_YELLOW, 1);  // Alterado para LED_YELLOW
     } else {
         // Vermelho: últimos 5 segundos
-        gpio_put(LED_GREEN, 0);
         gpio_put(LED_RED, 1);
-        gpio_put(LED_BLUE, 0);
     }
 }
 
@@ -154,7 +153,7 @@ int main() {
 
     // Exibe uma mensagem inicial no display
     ssd1306_fill(&ssd, false);
-    ssd1306_draw_string(&ssd, "Defina o Tempo", 20, 28);
+    ssd1306_draw_string(&ssd, "Defina o Tempo", 10,15);
     ssd1306_send_data(&ssd);
     sleep_ms(2000); // Aguarda 2 segundos
 

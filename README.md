@@ -1,4 +1,4 @@
-# Indicador de Concentração e Produtividade
+# Contador: Concentração e Produtividade
 Yasmin Damasceno Cruz - TIC370101610  
 Projeto Final - Sistemas Embarcados
 
