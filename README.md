@@ -19,7 +19,7 @@ Este projeto implementa um temporizador utilizando o microcontrolador RP2040, co
    git clone <https://github.com/YasminCruz001/Projeto_Embarcatech_Contador.git>
    ```
 2. Abra o projeto no VS Code.
-3. Compile e carregue o código na placa **BitDogLab**.
+3. Compile e carregue o código na placa **BitDogLab**.  
     4. Ou inicie a simulação no **Wokwi**.
 
 ## Funcionalidades do Projeto
